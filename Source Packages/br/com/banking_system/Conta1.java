@@ -5,19 +5,6 @@
 package br.com.banking_system;
 
 
-
-/*
-
-Não ta   pronto ainda!!!
-
-
-
-
-*/
-
-
-
-
 /**
  * Interface que define os métodos para operações da conta bancária.
  */

@@ -4,19 +4,6 @@
  */
 package br.com.banking_system;
 
-
-
-/*
-
-Não ta   pronto ainda!!!
-
-
-
-
-*/
-
-
-
 /**
  *
  * @author gabrieltroni
@@ -27,7 +14,9 @@ public abstract class Conta
     private double saldo;
     private int numConta;
     
-    public void Conta(Cliente cliente){
+    private static int próxNumConta = 1;
+    
+    public Conta(Cliente cliente){
         this.cliente = cliente;
         this.numConta = geraNumero();
         this.saldo = 0;
@@ -51,10 +40,10 @@ public abstract class Conta
         return false;
     }
     
-    @Override
+    /*@Override
     public String getDono(){
         return Cliente.getNome();
-    }
+    }*/
     
     @Override
     public int getNumero(){
@@ -69,8 +58,8 @@ public abstract class Conta
     @Override
     public abstract boolean remunera();
     
-    public int geraNumero(){
-        return 0; // descobrir como faz isso
+    private static int geraNumero(){
+        return próxNumConta++;
     }
     
     public void vinculaCliente(Cliente cliente){
