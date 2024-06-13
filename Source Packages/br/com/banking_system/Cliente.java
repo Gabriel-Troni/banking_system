@@ -1,5 +1,6 @@
 package br.com.banking_system;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -75,5 +76,15 @@ public class Cliente {
         this.endereco = endereco;
 
         return true;
+    }
+
+    public List<String> listaCliente() {
+        List<String> dadosCliente = new ArrayList<>();
+        dadosCliente.add(nome);
+        dadosCliente.add(sobrenome);
+        dadosCliente.add(rg);
+        dadosCliente.add(cpf);
+        dadosCliente.add(endereco);
+        return dadosCliente;
     }
 }
