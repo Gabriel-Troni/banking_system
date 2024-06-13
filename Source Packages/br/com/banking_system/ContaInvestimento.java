@@ -11,15 +11,16 @@ public class ContaInvestimento extends Conta implements Conta1 {
     private double depositoMinimo;
     private double montanteMinimo;
     
-    public ContaInvestimento(double saldo, int numero, String dono, double depositoMinimo, double montanteMinimo) {
-        super(saldo, numero, dono);
+    public ContaInvestimento(Cliente cliente, double saldo, int numero, double depositoMinimo, double montanteMinimo) {
+        super(cliente);
         this.depositoMinimo = depositoMinimo;
         this.montanteMinimo = montanteMinimo;
     }
     
     @Override
     public boolean saca(double valor) {
-        if(valor>0 && (this.saldo-valor >= montanteMinimo )){
+        double saldo = getSaldo();
+        if(valor>0 && (saldo-valor >= montanteMinimo )){
             super.saca(valor);
             return true;
         }else{
@@ -42,7 +43,7 @@ public class ContaInvestimento extends Conta implements Conta1 {
     
     @Override
     public void remunera() {
-       this.saldo += this.saldo*0.02;
+       double saldo = getSaldo();
+       setSaldo(saldo*1.02);
     }
 }   
-    
