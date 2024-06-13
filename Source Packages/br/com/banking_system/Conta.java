@@ -40,10 +40,10 @@ public abstract class Conta
         return false;
     }
     
-    /*@Override
-    public String getDono(){
-        return Cliente.getNome();
-    }*/
+    @Override
+    public String getDono(Cliente cliente){
+        return cliente.getNome();
+    }
     
     @Override
     public int getNumero(){
@@ -56,7 +56,12 @@ public abstract class Conta
     }
     
     @Override
-    public abstract boolean remunera();
+    public void setSaldo(double saldo){
+        this.saldo = saldo;
+    }
+    
+    @Override
+    public abstract void remunera();
     
     private static int geraNumero(){
         return próxNumConta++;

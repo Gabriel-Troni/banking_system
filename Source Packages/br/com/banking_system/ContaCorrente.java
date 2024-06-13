@@ -4,14 +4,16 @@ public class ContaCorrente extends Conta {
 
     private Double limite;
 
-    public ContaCorrente(Double limite) {
+    public ContaCorrente(Cliente cliente, Double limite) {
+        super(cliente);
         this.limite = limite;
     }
 
     @Override
     public boolean saca(double valor) {
+        double saldo = getSaldo();
         if(valor > 0 && valor <= saldo + limite){
-            saldo -= valor;
+            setSaldo(saldo - valor);
             return true;
         }
         return false;
@@ -19,8 +21,9 @@ public class ContaCorrente extends Conta {
     
     @Override
     public void remunera() {
+        double saldo = getSaldo(); 
     	if(saldo >= 0) {
-    		saldo = saldo*1.01;
+    		setSaldo(saldo*1.01);
     	}
     }
     

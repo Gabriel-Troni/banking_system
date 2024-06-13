@@ -31,7 +31,7 @@ public interface Conta1 {
      *
      * @return o nome do dono da conta
      */
-    String getDono();
+    String getDono(Cliente cliente);
 
     /**
      * Obtém o saldo atual da conta.
@@ -42,15 +42,15 @@ public interface Conta1 {
 
     /**
      * Obtém o número da conta.
-     *
-     * @return o número da conta
+     * 
      */
+    
+    void setSaldo(double saldo);
+    
     int getNumero();
 
     /**
      * Aplica remuneração à conta, se aplicável.
-     *
-     * @return true se a remuneração for aplicada com sucesso, false caso contrário
      */
-    boolean remunera();
+    void remunera();
 }
