@@ -665,7 +665,7 @@ public class TelaBanco extends javax.swing.JFrame {
             }
             
             if (!cpf.matches("\\d{11}")) {
-                JOptionPane.showMessageDialog(null, "O CPF deve ter 11 digitos.\n", "Informação", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Erro no cpf, deve ter 11 digitos numéricos.\n", "Informação", JOptionPane.INFORMATION_MESSAGE);
                 return;
             }
             
