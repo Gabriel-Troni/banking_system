@@ -97,6 +97,7 @@ public class ContaTableModel extends AbstractTableModel{
 
         public void adicionaListaConta(Conta conta) {
         this.listaConta.add(conta);
+        //this.fireTableDataChanged();
         this.fireTableRowsInserted(listaConta.size()-1,listaConta.size()-1);//update JTable
     }
        

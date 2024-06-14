@@ -53,8 +53,8 @@ public class ClienteTableModel extends AbstractTableModel{
     public Object getValueAt(int rowIndex, int columnIndex) {
         Cliente customer = lista.get(rowIndex);
         switch (columnIndex) {
-            case 0: return customer.getNome();
-            case 1: return customer.getSnome();
+            case 0: return customer.getNome();//if column 1 (name)
+            case 1: return customer.getSnome();//if column 2 (birthday)
             case 2: return customer.getCpf();
             case 3: return customer.getRg();
             case 4: return customer.getEndereco();
@@ -95,11 +95,11 @@ public class ClienteTableModel extends AbstractTableModel{
     }
     
     
-      public void removeCliente(int linha){
+    public void removeCliente(int linha){
        this.lista.remove(linha); 
        this.fireTableRowsDeleted(linha,linha);
     }
-
+    
     public void adicionaContato(Cliente customer) {
         this.lista.add(customer);
         this.fireTableRowsInserted(lista.size()-1,lista.size()-1);//update JTable

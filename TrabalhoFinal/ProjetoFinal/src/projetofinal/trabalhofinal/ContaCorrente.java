@@ -4,10 +4,6 @@
  */
 package trabalhofinal;
 
-/**
- *
- * @author Thiago
- */
 public class ContaCorrente extends Conta implements Conta1{
     
     private double limite;
