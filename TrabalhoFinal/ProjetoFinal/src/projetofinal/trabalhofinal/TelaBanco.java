@@ -728,21 +728,19 @@ public class TelaBanco extends javax.swing.JFrame {
     }//GEN-LAST:event_jScrollPane1MouseClicked
 
     private void jButtonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirActionPerformed
-        if(jTable1.getSelectedRow() != -1){
-            int opcao_escolhida = JOptionPane
-              .showConfirmDialog(null,
-                    "Deseja excluir TODAS as informações do cliente?", 
-                    "Excluir", 
-                    JOptionPane.YES_NO_OPTION);
+
+            if(jTable1.getSelectedRow() != -1){
+                   int opcao_escolhida = JOptionPane
+          .showConfirmDialog(null,
+                                       "Deseja excluir TODAS as informações do cliente?", 
+                                       "Excluir", 
+                                       JOptionPane.YES_NO_OPTION);
         if (opcao_escolhida == JOptionPane.YES_OPTION)
-            {
-                Cliente cliente = modeloCliente.getContato(jTable1.getSelectedRow());
-                
-                modeloConta.removeContasByCPF(cliente.getCpf());
-                
-                modeloCliente.removeCliente(jTable1.getSelectedRow());
-            }
+        {
+            //System.out.println(modeloCliente.getContato(jTable1.getSelectedRow()));
+            modeloCliente.removeCliente(jTable1.getSelectedRow());
         }
+            }
     }//GEN-LAST:event_jButtonExcluirActionPerformed
 
     private void jScrollPane9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane9MouseClicked

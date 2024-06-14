@@ -7,7 +7,10 @@ package trabalhofinal;
 import java.util.List;
 import java.util.ArrayList;
 
-
+/**
+ *
+ * @author Rodolfo
+ */
 public class BancoDados {
     public static List<Cliente> listaClientes = new ArrayList<Cliente>();
     public static List<Conta> listaContas = new ArrayList<Conta>(); 

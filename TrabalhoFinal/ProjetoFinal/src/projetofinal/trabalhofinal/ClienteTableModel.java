@@ -10,6 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
+/**
+ *
+ * @author Rodolfo
+ */
 public class ClienteTableModel extends AbstractTableModel{
     private String[] colunas=new String[]{"Nome", "Sobrenome", "CPF","RG","Endereco"};
 
@@ -102,11 +106,11 @@ public class ClienteTableModel extends AbstractTableModel{
     }
     
     
-    public void adicionaConta(ContaCorrente conta) {
+        public void adicionaConta(ContaCorrente conta) {
         this.listaConta1.add(conta);
     }
         
-    public void adicionaConta2(ContaInvestimento conta) {
+                public void adicionaConta2(ContaInvestimento conta) {
         this.listaConta2.add(conta);
     }
 
@@ -120,7 +124,7 @@ public class ClienteTableModel extends AbstractTableModel{
         if(indice<0)
             indice=0;
         this.lista = new ArrayList();
-        this.fireTableRowsDeleted(0,indice);
+        this.fireTableRowsDeleted(0,indice);//update JTable
     }
 
     public Cliente getContato(int linha){
@@ -134,7 +138,15 @@ public class ClienteTableModel extends AbstractTableModel{
         });
     }
     
-
+    public boolean checkCpf(String cpf) {
+        for (Cliente cliente : lista) {
+            if (cliente.getCpf().equals(cpf)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
     public boolean checkCpfExists(String cpf) {
         for (Cliente cliente : lista) {
             if (cliente.getCpf().equals(cpf)) {
