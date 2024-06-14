@@ -661,8 +661,13 @@ public class TelaBanco extends javax.swing.JFrame {
             String snome = jTextFieldSNome.getText();
             String rg = jTextFieldRg.getText();
             String endereco = jTextEndereco.getText();
+            
+            if (modeloCliente.checkCpfExists(cpf)) {
+                JOptionPane.showMessageDialog(null, "CPF já cadastrado.\n", "Informação", JOptionPane.INFORMATION_MESSAGE);
+                return;
+            }
+            
             Cliente cliente = new Cliente(nome, snome, cpf, rg, endereco);
-            //BancoDados.listaClientes.add(cliente);
             modeloCliente.adicionaContato(cliente);
         }catch(Exception ex){
             JOptionPane.showMessageDialog(null,"Algo deu errado.\n", "Erro", JOptionPane.ERROR_MESSAGE);

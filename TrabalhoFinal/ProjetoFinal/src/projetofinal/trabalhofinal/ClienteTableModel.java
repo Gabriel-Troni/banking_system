@@ -146,5 +146,15 @@ public class ClienteTableModel extends AbstractTableModel{
         }
         return false;
     }
+    
+    public boolean checkCpfExists(String cpf) {
+        for (Cliente cliente : lista) {
+            if (cliente.getCpf().equals(cpf)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
 }
