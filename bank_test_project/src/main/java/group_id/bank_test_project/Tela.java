@@ -12,6 +12,10 @@ import javax.swing.JOptionPane;
  * @author rodolfov2
  */
 public class Tela extends javax.swing.JFrame {
+    private ClienteTableModel tabModel = new ClienteTableModel();
+    private int linhaClicadaParaAtualizacao = -1;
+    private Cliente clienteSelecionadoParaAtualizacao;
+
 
     /**
      * Creates new form NewJFrametest
@@ -47,7 +51,7 @@ public class Tela extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabCliente = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
 
@@ -88,7 +92,7 @@ public class Tela extends javax.swing.JFrame {
 
         jButton5.setText("Limpar");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -99,7 +103,7 @@ public class Tela extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tabCliente);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -296,7 +300,7 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tabCliente;
     private javax.swing.JTextField txtCPF;
     private javax.swing.JTextField txtEndereco;
     private javax.swing.JTextField txtNome;
