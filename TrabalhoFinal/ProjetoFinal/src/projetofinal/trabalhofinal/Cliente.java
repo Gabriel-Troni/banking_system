@@ -13,16 +13,14 @@ public class Cliente{
     private String cpf;
     private String rg;
     private String endereco;
-    private double salario;
     
     
-     public Cliente(String nome, String snome, String cpf, String rg, String endereco, double salario) {
+     public Cliente(String nome, String snome, String cpf, String rg, String endereco) {
         this.nome = nome;
         this.snome = snome;
         this.cpf = cpf;
         this.rg = rg;
         this.endereco = endereco;
-        this.salario = salario;
     }
 
     public String getNome() {
@@ -63,17 +61,5 @@ public class Cliente{
 
     public void setEndereco(String endereco) {
         this.endereco = endereco;
-    }
-
-    public double getSalario() {
-        return salario;
-    }
-
-    public void setSalario(double salario) {
-        this.salario = salario;
-    }
-
-
-    
-       
+    }       
 }

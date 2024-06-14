@@ -56,9 +56,7 @@ public class Conta implements Conta1 {
     }
 
     @Override
-    public void remunera() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    public abstract void remunera();
 
     @Override
     public String getDono() {

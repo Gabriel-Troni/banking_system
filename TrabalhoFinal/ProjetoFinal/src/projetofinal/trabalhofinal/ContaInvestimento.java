@@ -25,7 +25,7 @@ public class ContaInvestimento extends Conta implements Conta1 {
             super.saca(valor);
             return true;
         }else{
-            System.out.println("Saque não realizado. Verifique se o valor é válido ou se o saldo mínimo é atendido.");  
+            System.out.println("Erro: Saldo insuficiente");  
             return false;   
         }      
     }
@@ -37,7 +37,7 @@ public class ContaInvestimento extends Conta implements Conta1 {
             super.deposita(valor);
             return true;
         }else{
-            System.out.println("Depósito não realizado. Verifique se o valor é válido ou atende ao depósito mínimo.");
+            System.out.println("Erro: Depósito insuficiente");
             return false;
         }
     }

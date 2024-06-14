@@ -57,9 +57,7 @@ public class TelaBanco extends javax.swing.JFrame {
         jLabelEndereco = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextEndereco = new javax.swing.JTextPane();
-        jLabelSalario = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTextSalario = new javax.swing.JTextPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
@@ -153,10 +151,6 @@ public class TelaBanco extends javax.swing.JFrame {
 
         jScrollPane4.setViewportView(jTextEndereco);
 
-        jLabelSalario.setText("Salario:");
-
-        jScrollPane5.setViewportView(jTextSalario);
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -174,7 +168,6 @@ public class TelaBanco extends javax.swing.JFrame {
                             .addComponent(jTextFieldRg)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelSalario)
                             .addComponent(jLabelEndereco))
                         .addGap(19, 19, 19)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,7 +214,6 @@ public class TelaBanco extends javax.swing.JFrame {
                     .addComponent(jTextFieldRg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabelSalario)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -675,9 +667,7 @@ public class TelaBanco extends javax.swing.JFrame {
             String snome = jTextFieldSNome.getText();
             String rg = jTextFieldRg.getText();
             String endereco = jTextEndereco.getText();
-            String salario = jTextSalario.getText();
-            double dsalario = Double.parseDouble(salario);
-            Cliente cliente = new Cliente(nome, snome, cpf, rg, endereco, dsalario);
+            Cliente cliente = new Cliente(nome, snome, cpf, rg, endereco);
             //BancoDados.listaClientes.add(cliente);
             modeloCliente.adicionaContato(cliente);
         }catch(Exception ex){
@@ -700,14 +690,11 @@ public class TelaBanco extends javax.swing.JFrame {
             String snome = jTextFieldSNome.getText();
             String rg = jTextFieldRg.getText();
             String endereco = jTextEndereco.getText();
-            String salario = jTextSalario.getText();
-            double dsalario = Double.parseDouble(salario);
             modeloCliente.setValueAt(nome,jTable1.getSelectedRow(),0);
             modeloCliente.setValueAt(cpf,jTable1.getSelectedRow(),2);
             modeloCliente.setValueAt(snome,jTable1.getSelectedRow(),1);
             modeloCliente.setValueAt(rg,jTable1.getSelectedRow(),3);
             modeloCliente.setValueAt(endereco,jTable1.getSelectedRow(),4);
-            modeloCliente.setValueAt(dsalario,jTable1.getSelectedRow(),5);
             
         }
             }
@@ -938,7 +925,6 @@ public class TelaBanco extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelCpf;
     private javax.swing.JLabel jLabelEndereco;
     private javax.swing.JLabel jLabelRG;
-    private javax.swing.JLabel jLabelSalario;
     private javax.swing.JLabel jLabelSnome;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLayeredPane jLayeredPaneFieldsInvestmento;
@@ -980,6 +966,5 @@ public class TelaBanco extends javax.swing.JFrame {
     private javax.swing.JTextPane jTextFieldSNome;
     private javax.swing.JTextPane jTextPane2;
     private javax.swing.JTextPane jTextPaneDeposito;
-    private javax.swing.JTextPane jTextSalario;
     // End of variables declaration//GEN-END:variables
 }

@@ -15,7 +15,7 @@ import javax.swing.table.AbstractTableModel;
  * @author Rodolfo
  */
 public class ClienteTableModel extends AbstractTableModel{
-    private String[] colunas=new String[]{"Nome", "Sobrenome", "CPF","RG","Endereco","Salario"};
+    private String[] colunas=new String[]{"Nome", "Sobrenome", "CPF","RG","Endereco"};
 
     private List<Cliente> lista=new ArrayList();
     private List<ContaCorrente> listaConta1=new ArrayList();
@@ -53,12 +53,11 @@ public class ClienteTableModel extends AbstractTableModel{
     public Object getValueAt(int rowIndex, int columnIndex) {
         Cliente customer = lista.get(rowIndex);
         switch (columnIndex) {
-            case 0: return customer.getNome();//if column 1 (name)
-            case 1: return customer.getSnome();//if column 2 (birthday)
+            case 0: return customer.getNome();
+            case 1: return customer.getSnome();
             case 2: return customer.getCpf();
             case 3: return customer.getRg();
             case 4: return customer.getEndereco();
-            case 5: return customer.getSalario();
             default : return null;
         }
     }
@@ -81,9 +80,6 @@ public class ClienteTableModel extends AbstractTableModel{
                 break;
             case 4:
                 customer.setEndereco((String) value);
-                break;
-            case 5:
-                customer.setSalario((double) value);
                 break;
             default:
         }
