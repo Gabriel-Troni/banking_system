@@ -93,6 +93,19 @@ public class ContaTableModel extends AbstractTableModel{
         this.listaConta.add(conta);
         this.fireTableRowsInserted(listaConta.size()-1,listaConta.size()-1);//update JTable
     }
-    
+   
+    public void removeContasByCPF(String cpf) {
+        List<Conta> contasToRemove = new ArrayList<>();
+        
+        for (Conta conta : listaConta) {
+            if (conta.getDono().equals(cpf)) {
+                contasToRemove.add(conta);
+            }
+        }
+        
+        listaConta.removeAll(contasToRemove);
+        
+        this.fireTableDataChanged();
+    }
 
 }
