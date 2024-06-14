@@ -3,10 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package trabalhofinal;
-/**
- *
- * @author Rodolfo
- */
+
+
 public class Cliente{
     private String nome;
     private String snome;

@@ -10,10 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
-/**
- *
- * @author Rodolfo
- */
+
 public class ContaTableModel extends AbstractTableModel{
     private String[] colunas=new String[]{"CPF","Numero"};
 
@@ -48,9 +45,6 @@ public class ContaTableModel extends AbstractTableModel{
     @Override
     public boolean isCellEditable(int row, int column) {
         return false;
-        /*if(column==0)
-            return true;
-        return false;*/
     }
 
     @Override
@@ -95,13 +89,10 @@ public class ContaTableModel extends AbstractTableModel{
 
   
 
-        public void adicionaListaConta(Conta conta) {
+    public void adicionaListaConta(Conta conta) {
         this.listaConta.add(conta);
-        //this.fireTableDataChanged();
         this.fireTableRowsInserted(listaConta.size()-1,listaConta.size()-1);//update JTable
     }
-       
-
-
     
+
 }

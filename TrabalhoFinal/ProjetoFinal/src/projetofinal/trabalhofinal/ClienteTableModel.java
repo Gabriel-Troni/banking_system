@@ -10,10 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
-/**
- *
- * @author Rodolfo
- */
 public class ClienteTableModel extends AbstractTableModel{
     private String[] colunas=new String[]{"Nome", "Sobrenome", "CPF","RG","Endereco"};
 
