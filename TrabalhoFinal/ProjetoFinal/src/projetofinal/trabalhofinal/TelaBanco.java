@@ -222,6 +222,7 @@ public class TelaBanco extends javax.swing.JFrame {
             }
         });
 
+        jTable1.setAutoCreateRowSorter(true);
         jTable1.setModel(modeloCliente);
         jScrollPane1.setViewportView(jTable1);
 
@@ -262,6 +263,7 @@ public class TelaBanco extends javax.swing.JFrame {
             }
         });
 
+        jTable2.setAutoCreateRowSorter(true);
         jTable2.setModel(modeloCliente);
         jScrollPane9.setViewportView(jTable2);
 
@@ -479,7 +481,7 @@ public class TelaBanco extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLayeredPaneFieldsInvestmento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -495,7 +497,7 @@ public class TelaBanco extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -611,6 +613,7 @@ public class TelaBanco extends javax.swing.JFrame {
                 .addContainerGap(161, Short.MAX_VALUE))
         );
 
+        jTable4.setAutoCreateRowSorter(true);
         jTable4.setModel(modeloConta);
         jScrollPane15.setViewportView(jTable4);
 
@@ -713,6 +716,12 @@ public class TelaBanco extends javax.swing.JFrame {
             String snome = jTextFieldSNome.getText();
             String rg = jTextFieldRg.getText();
             String endereco = jTextEndereco.getText();
+            
+            if (modeloCliente.checkCpfExists(cpf)) {
+                JOptionPane.showMessageDialog(null, "CPF já cadastrado.\n", "Informação", JOptionPane.INFORMATION_MESSAGE);
+                return;
+            }
+            
             modeloCliente.setValueAt(nome,jTable1.getSelectedRow(),0);
             modeloCliente.setValueAt(cpf,jTable1.getSelectedRow(),2);
             modeloCliente.setValueAt(snome,jTable1.getSelectedRow(),1);
